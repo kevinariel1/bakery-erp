@@ -1,0 +1,161 @@
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.empty {
+  font-size: 13px;
+  color: #888;
+  padding: 8px 0 16px;
+}
+
+.orderGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.orderCard {
+  background: #fff;
+  border: 0.5px solid #e0e0da;
+  border-radius: 12px;
+  padding: 14px 16px;
+}
+
+.orderName { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+.orderDue { font-size: 11px; color: #888; margin-bottom: 10px; }
+.orderQty { font-size: 26px; font-weight: 600; }
+.orderUnit { font-size: 12px; color: #888; font-weight: 400; }
+
+.progressWrap {
+  height: 6px;
+  background: #f0f0ea;
+  border-radius: 999px;
+  overflow: hidden;
+  margin: 8px 0;
+}
+
+.progressBar {
+  height: 100%;
+  background: #1D9E75;
+  border-radius: 999px;
+  transition: width 0.4s;
+}
+
+.progressLabel {
+  display: flex;
+  justify-content: space-between;
+  font-size: 11px;
+  color: #888;
+  margin-bottom: 10px;
+}
+
+.bakeButtons {
+  display: flex;
+  gap: 6px;
+}
+
+.card {
+  background: #fff;
+  border: 0.5px solid #e0e0da;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.tagRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 12px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 0.5px solid #e0e0da;
+  background: #f5f5f0;
+  color: #666;
+  transition: all 0.15s;
+}
+
+.tagSel {
+  background: #E6F1FB;
+  border-color: #85B7EB;
+  color: #185FA5;
+  font-weight: 500;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.inputRow label {
+  font-size: 12px;
+  color: #888;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.inputRow input {
+  flex: 1;
+  padding: 7px 10px;
+  border: 0.5px solid #d0d0ca;
+  border-radius: 8px;
+  font-size: 13px;
+  outline: none;
+}
+
+.inputRow input:focus { border-color: #378ADD; }
+
+.btnPrimary {
+  background: #1D9E75;
+  color: #fff;
+  border: none;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  flex: 1;
+  transition: background 0.15s;
+}
+
+.btnPrimary:hover:not(:disabled) { background: #0F6E56; }
+.btnPrimary:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.btnOutline {
+  background: #fff;
+  color: #1a1a1a;
+  border: 0.5px solid #d0d0ca;
+  padding: 7px 14px;
+  border-radius: 8px;
+  font-size: 13px;
+  flex: 1;
+  transition: background 0.15s;
+}
+
+.btnOutline:hover:not(:disabled) { background: #f5f5f0; }
+.btnOutline:disabled { opacity: 0.4; cursor: not-allowed; }
+
+.msg {
+  margin-top: 10px;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.success { background: #E1F5EE; color: #0F6E56; }
+.error { background: #FCEBEB; color: #A32D2D; }

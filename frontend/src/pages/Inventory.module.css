@@ -1,0 +1,155 @@
+.statGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+  margin-bottom: 16px;
+}
+
+.card {
+  background: #fff;
+  border: 0.5px solid #e0e0da;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 16px;
+}
+
+.cardTitle {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 12px;
+  color: #1a1a1a;
+}
+
+.loading {
+  color: #888;
+  font-size: 13px;
+  padding: 8px 0;
+}
+
+.ingRow {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 0;
+  border-bottom: 0.5px solid #f0f0ea;
+}
+
+.ingRow:last-child { border-bottom: none; }
+
+.ingName {
+  font-size: 13px;
+  font-weight: 500;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.barWrap {
+  flex: 1;
+  height: 8px;
+  background: #f0f0ea;
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.bar {
+  height: 100%;
+  border-radius: 999px;
+  transition: width 0.4s;
+}
+
+.ingQty {
+  font-size: 12px;
+  color: #888;
+  width: 110px;
+  text-align: right;
+  flex-shrink: 0;
+}
+
+.badge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+  width: 54px;
+  text-align: center;
+  flex-shrink: 0;
+}
+
+.ok { background: #E1F5EE; color: #0F6E56; }
+.low { background: #FAEEDA; color: #854F0B; }
+.critical { background: #FCEBEB; color: #A32D2D; }
+
+.tagRow {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 12px;
+}
+
+.tag {
+  font-size: 12px;
+  padding: 4px 12px;
+  border-radius: 999px;
+  border: 0.5px solid #e0e0da;
+  background: #f5f5f0;
+  color: #666;
+  transition: all 0.15s;
+}
+
+.tagSel {
+  background: #E1F5EE;
+  border-color: #5DCAA5;
+  color: #0F6E56;
+  font-weight: 500;
+}
+
+.inputRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.inputRow label {
+  font-size: 12px;
+  color: #888;
+  width: 60px;
+  flex-shrink: 0;
+}
+
+.inputRow input {
+  flex: 1;
+  padding: 7px 10px;
+  border: 0.5px solid #d0d0ca;
+  border-radius: 8px;
+  font-size: 13px;
+  background: #fff;
+  color: #1a1a1a;
+  outline: none;
+}
+
+.inputRow input:focus {
+  border-color: #1D9E75;
+}
+
+.btnPrimary {
+  background: #1D9E75;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  transition: background 0.15s;
+}
+
+.btnPrimary:hover { background: #0F6E56; }
+
+.msg {
+  margin-top: 10px;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.success { background: #E1F5EE; color: #0F6E56; }
+.error { background: #FCEBEB; color: #A32D2D; }

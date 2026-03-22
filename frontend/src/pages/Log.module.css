@@ -1,0 +1,36 @@
+.card {
+  background: #fff;
+  border: 0.5px solid #e0e0da;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13px;
+}
+
+.table th {
+  text-align: left;
+  padding: 10px 16px;
+  color: #888;
+  font-weight: 500;
+  border-bottom: 0.5px solid #e0e0da;
+  background: #fafaf8;
+}
+
+.table td {
+  padding: 10px 16px;
+  border-bottom: 0.5px solid #f0f0ea;
+  color: #1a1a1a;
+}
+
+.table tr:last-child td { border-bottom: none; }
+.table tr:hover td { background: #fafaf8; }
+
+.empty {
+  color: #aaa;
+  text-align: center;
+  padding: 20px !important;
+}

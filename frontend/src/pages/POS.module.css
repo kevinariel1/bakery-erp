@@ -1,0 +1,139 @@
+.layout {
+  display: grid;
+  grid-template-columns: 1fr 340px;
+  gap: 16px;
+  align-items: start;
+}
+
+.sectionLabel {
+  font-size: 13px;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.productGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 8px;
+}
+
+.productBtn {
+  background: #fff;
+  border: 0.5px solid #e0e0da;
+  border-radius: 10px;
+  padding: 14px;
+  text-align: left;
+  transition: all 0.15s;
+}
+
+.productBtn:hover {
+  border-color: #1D9E75;
+  background: #f9fdf9;
+}
+
+.pName { font-size: 13px; font-weight: 500; margin-bottom: 4px; }
+.pPrice { font-size: 17px; font-weight: 600; color: #1D9E75; margin-bottom: 4px; }
+.pIng { font-size: 11px; color: #999; }
+
+.card {
+  background: #fff;
+  border: 0.5px solid #e0e0da;
+  border-radius: 12px;
+  padding: 16px 20px;
+  margin-bottom: 12px;
+}
+
+.cardTitle { font-size: 13px; font-weight: 600; margin-bottom: 12px; }
+
+.empty { font-size: 12px; color: #aaa; padding: 8px 0; }
+
+.cartRow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 7px 0;
+  border-bottom: 0.5px solid #f0f0ea;
+  font-size: 13px;
+}
+
+.cartRow:last-child { border-bottom: none; }
+.cartName { flex: 1; }
+
+.cartQty {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 13px;
+}
+
+.qtyBtn {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  border: 0.5px solid #d0d0ca;
+  background: #fff;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: background 0.15s;
+}
+
+.qtyBtn:hover { background: #f5f5f0; }
+
+.cartPrice { font-size: 12px; color: #888; width: 90px; text-align: right; }
+
+.divider { height: 0.5px; background: #e0e0da; margin: 12px 0; }
+
+.totalRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  color: #888;
+  margin-bottom: 12px;
+}
+
+.totalVal { font-size: 18px; font-weight: 600; color: #1a1a1a; }
+
+.checkoutRow { display: flex; gap: 8px; }
+
+.btnPrimary {
+  background: #1D9E75;
+  color: #fff;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  font-weight: 500;
+  flex: 1;
+  transition: background 0.15s;
+}
+
+.btnPrimary:hover { background: #0F6E56; }
+
+.btnOutline {
+  background: #fff;
+  color: #1a1a1a;
+  border: 0.5px solid #d0d0ca;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-size: 13px;
+  flex: 1;
+  transition: background 0.15s;
+}
+
+.btnOutline:hover { background: #f5f5f0; }
+
+.revenue { font-size: 24px; font-weight: 600; color: #1D9E75; }
+.txns { font-size: 12px; color: #888; margin-top: 2px; }
+
+.msg {
+  margin-top: 10px;
+  font-size: 12px;
+  padding: 6px 10px;
+  border-radius: 6px;
+}
+
+.success { background: #E1F5EE; color: #0F6E56; }
+.error { background: #FCEBEB; color: #A32D2D; }
