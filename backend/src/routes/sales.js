@@ -5,12 +5,13 @@ import {
   createSale,
   getProducts
 } from '../controllers/sales.controller.js'
+import { authenticate, requireRole } from '../middleware/auth.js'
 
 const router = Router()
 
-router.get('/', getSales)
-router.get('/revenue', getTodayRevenue)
-router.get('/products', getProducts)
-router.post('/', createSale)
+router.get('/products', authenticate, getProducts)
+router.get('/', authenticate, requireRole('admin'), getSales)
+router.get('/revenue', authenticate, getTodayRevenue)
+router.post('/', authenticate, createSale)
 
 export default router

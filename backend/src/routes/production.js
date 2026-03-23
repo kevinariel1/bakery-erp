@@ -5,12 +5,13 @@ import {
   updateBaked,
   getFinishedGoods
 } from '../controllers/production.controller.js'
+import { authenticate } from '../middleware/auth.js'
 
 const router = Router()
 
-router.get('/', getOrders)
-router.get('/finished-goods', getFinishedGoods)
-router.post('/', addOrder)
-router.patch('/:id/bake', updateBaked)
+router.get('/', authenticate, getOrders)
+router.get('/finished-goods', authenticate, getFinishedGoods)
+router.post('/', authenticate, addOrder)
+router.patch('/:id/bake', authenticate, updateBaked)
 
 export default router
