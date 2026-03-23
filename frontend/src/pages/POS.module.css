@@ -137,3 +137,22 @@
 
 .success { background: #E1F5EE; color: #0F6E56; }
 .error { background: #FCEBEB; color: #A32D2D; }
+
+.outOfStock {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+.outOfStock:hover {
+  border-color: #e0e0da;
+  background: #fff;
+}
+
+.pStock {
+  font-size: 11px;
+  margin-top: 4px;
+  font-weight: 500;
+}
+
+.pStockOk { color: #1D9E75; }
+.pStockEmpty { color: #E24B4A; }

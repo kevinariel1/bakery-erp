@@ -7,8 +7,10 @@ import styles from './Inventory.module.css'
 const INGREDIENTS = ['flour', 'sugar', 'yeast']
 
 function getStatus(ing) {
-  if (ing.quantity <= ing.low_threshold * 0.33) return 'critical'
-  if (ing.quantity <= ing.low_threshold) return 'low'
+  const qty = parseFloat(ing.quantity)
+  const low = parseFloat(ing.low_threshold)
+  if (qty <= low * 0.33) return 'critical'
+  if (qty <= low) return 'low'
   return 'ok'
 }
 
