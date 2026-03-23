@@ -6,6 +6,8 @@ import inventoryRoutes from './routes/inventory.js'
 import productionRoutes from './routes/production.js'
 import salesRoutes from './routes/sales.js'
 
+import { startDailyReset } from './jobs/dailyReset.js'
+
 dotenv.config()
 
 const app = express()
@@ -21,6 +23,8 @@ app.get('/', (req, res) => {
 app.use('/api/inventory', inventoryRoutes)
 app.use('/api/production', productionRoutes)
 app.use('/api/sales', salesRoutes)
+
+startDailyReset()
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`)
