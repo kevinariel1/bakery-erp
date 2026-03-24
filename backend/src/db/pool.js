@@ -11,10 +11,26 @@ const pool = new Pool({
   database: process.env.DB_NAME,
   user: process.env.DB_USER,
   password: process.env.DB_PASSWORD,
+  connectionString: process.env.DATABASE_URL,
 })
 
-pool.connect()
-  .then(() => console.log('Connected to PostgreSQL'))
-  .catch((err) => console.error('DB connection error:', err.message))
+async function connectWithRetry(retries = 10, delay = 3000) {
+  for (let i = 1; i <= retries; i++) {
+    try {
+      await pool.connect()
+      console.log('Connected to PostgreSQL')
+      return
+    } catch (err) {
+      console.log(`Waiting for DB... attempt ${i}/${retries}`)
+      if (i === retries) {
+        console.error('Could not connect to PostgreSQL:', err.message)
+        process.exit(1)
+      }
+      await new Promise(res => setTimeout(res, delay))
+    }
+  }
+}
+
+connectWithRetry()
 
 export default pool
