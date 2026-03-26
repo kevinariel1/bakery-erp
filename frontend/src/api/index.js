@@ -1,5 +1,12 @@
 import client from './client.js'
 
+export const authApi = {
+  login: (email, password) => client.post('/auth/login', { email, password }),
+  me: () => client.get('/auth/me'),
+  getUsers: () => client.get('/auth/users'),
+  register: (data) => client.post('/auth/register', data)
+}
+
 export const inventoryApi = {
   getAll: () => client.get('/inventory'),
   restock: (name, amount) => client.post('/inventory/restock', { name, amount }),

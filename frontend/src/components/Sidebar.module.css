@@ -83,3 +83,51 @@
   color: #bbb;
   margin-bottom: 4px;
 }
+
+.user {
+  padding: 12px 16px;
+  border-top: 0.5px solid #e0e0da;
+  margin-top: 8px;
+}
+
+.userName {
+  font-size: 13px;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin-bottom: 6px;
+}
+
+.userMeta {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.roleBadge {
+  font-size: 10px;
+  padding: 2px 8px;
+  border-radius: 999px;
+  font-weight: 600;
+}
+
+.admin {
+  background: #E6F1FB;
+  color: #185FA5;
+}
+
+.staff {
+  background: #E1F5EE;
+  color: #0F6E56;
+}
+
+.logoutBtn {
+  font-size: 11px;
+  color: #888;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0;
+  text-decoration: underline;
+}
+
+.logoutBtn:hover { color: #E24B4A; }
