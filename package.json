@@ -1,6 +1,7 @@
 {
   "name": "bakery-hub",
   "private": true,
+  "type": "module",
   "workspaces": [
     "backend",
     "frontend"
