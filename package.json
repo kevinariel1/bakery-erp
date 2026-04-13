@@ -1,0 +1,11 @@
+{
+  "name": "bakery-hub",
+  "private": true,
+  "workspaces": [
+    "backend",
+    "frontend"
+  ],
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

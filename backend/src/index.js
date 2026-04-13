@@ -6,6 +6,7 @@ import authRoutes from './routes/auth.js'
 import inventoryRoutes from './routes/inventory.js'
 import productionRoutes from './routes/production.js'
 import salesRoutes from './routes/sales.js'
+import jobRoutes from './routes/jobs.js'
 import { startDailyReset } from './jobs/dailyReset.js'
 
 dotenv.config()
@@ -24,9 +25,14 @@ app.use('/api/auth', authRoutes)
 app.use('/api/inventory', inventoryRoutes)
 app.use('/api/production', productionRoutes)
 app.use('/api/sales', salesRoutes)
+app.use('/api/jobs', jobRoutes)
 
 startDailyReset()
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`)
-})
+export default app
+
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  app.listen(PORT, () => {
+    console.log(`Server running on http://localhost:${PORT}`)
+  })
+}
