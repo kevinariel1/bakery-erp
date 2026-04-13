@@ -17,15 +17,22 @@ const PORT = process.env.PORT || 3001
 app.use(cors())
 app.use(express.json())
 
-app.get(['/', '/api'], (req, res) => {
+const router = express.Router()
+
+router.get(['/', '/api'], (req, res) => {
   res.json({ message: 'Bakery Hub API is running' })
 })
 
-app.use('/api/auth', authRoutes)
-app.use('/api/inventory', inventoryRoutes)
-app.use('/api/production', productionRoutes)
-app.use('/api/sales', salesRoutes)
-app.use('/api/jobs', jobRoutes)
+router.use('/auth', authRoutes)
+router.use('/inventory', inventoryRoutes)
+router.use('/production', productionRoutes)
+router.use('/sales', salesRoutes)
+router.use('/jobs', jobRoutes)
+
+// Mount the router on both /api and / 
+// This makes it compatible with both local development and various deployment configurations
+app.use('/api', router)
+app.use('/', router)
 
 startDailyReset()
 
