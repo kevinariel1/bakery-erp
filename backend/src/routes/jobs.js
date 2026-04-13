@@ -3,7 +3,7 @@ import pool from '../db/pool.js'
 
 const router = express.Router()
 
-router.post('/run', async (req, res) => {
+router.get('/run', async (req, res) => {
   // Simple "shared secret" auth to prevent unauthorized resets
   const authHeader = req.headers.authorization
   if (process.env.CRON_SECRET && authHeader !== `Bearer ${process.env.CRON_SECRET}`) {

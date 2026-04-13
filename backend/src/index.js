@@ -19,8 +19,12 @@ app.use(express.json())
 
 const router = express.Router()
 
-router.get(['/', '/api'], (req, res) => {
-  res.json({ message: 'Bakery Hub API is running' })
+router.get('/', (req, res) => {
+  res.json({ 
+    message: 'Bakery Hub API is running',
+    environment: process.env.NODE_ENV,
+    vercel: !!process.env.VERCEL
+  })
 })
 
 router.use('/auth', authRoutes)
@@ -34,7 +38,18 @@ router.use('/jobs', jobRoutes)
 app.use('/api', router)
 app.use('/', router)
 
-startDailyReset()
+// 404 Handler for API
+app.use((req, res) => {
+  res.status(404).json({ 
+    error: 'Route not found in Express', 
+    path: req.url,
+    method: req.method
+  })
+})
+
+if (process.env.NODE_ENV !== 'production' || !process.env.VERCEL) {
+  startDailyReset()
+}
 
 export default app
 
