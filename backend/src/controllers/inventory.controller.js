@@ -7,6 +7,7 @@ export const getIngredients = async (req, res) => {
     )
     res.json(result.rows)
   } catch (err) {
+    console.error('getIngredients error:', err)
     res.status(500).json({ error: err.message })
   }
 }
@@ -30,6 +31,7 @@ export const restockIngredient = async (req, res) => {
     }
     res.json(result.rows[0])
   } catch (err) {
+    console.error('restockIngredient error:', err)
     res.status(500).json({ error: err.message })
   }
 }
@@ -67,6 +69,7 @@ export const deductIngredients = async (req, res) => {
     res.json({ message: 'Ingredients deducted successfully' })
   } catch (err) {
     await client.query('ROLLBACK')
+    console.error('deductIngredients error:', err)
     res.status(500).json({ error: err.message })
   } finally {
     client.release()

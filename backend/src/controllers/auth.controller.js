@@ -31,6 +31,7 @@ export const register = async (req, res) => {
 
     res.status(201).json({ message: 'User created', user: result.rows[0] })
   } catch (err) {
+    console.error('Register error:', err)
     res.status(500).json({ error: err.message })
   }
 }
@@ -69,6 +70,7 @@ export const login = async (req, res) => {
       user: { id: user.id, name: user.name, email: user.email, role: user.role }
     })
   } catch (err) {
+    console.error('Login error:', err)
     res.status(500).json({ error: err.message })
   }
 }
@@ -84,6 +86,7 @@ export const getUsers = async (req, res) => {
     )
     res.json(result.rows)
   } catch (err) {
+    console.error('getUsers error:', err)
     res.status(500).json({ error: err.message })
   }
 }
