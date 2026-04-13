@@ -32,6 +32,7 @@ async function connectWithRetry(retries = 10, delay = 3000) {
   }
 }
 
-connectWithRetry()
+// connectWithRetry() - Removed for Vercel/Serverless compatibility. 
+// pg.Pool will connect automatically when the first query is made.
 
 export default pool
