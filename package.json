@@ -3,7 +3,7 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "build": "npm run build --workspace=frontend"
+    "build": "npm run build --workspace=frontend && cp -r frontend/dist ./public"
   },
   "workspaces": [
     "backend",
